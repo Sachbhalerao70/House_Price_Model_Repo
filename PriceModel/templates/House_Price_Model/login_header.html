@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House_Price_Predication</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+     {% load static %}
+    <link rel="stylesheet" href="{% static '/House_Price_predication/css/header.css'%}">
+     <link rel="stylesheet" href="{% static '/House_Price_predication/css/hover.css'%}">
+     <link rel="stylesheet" href="{% static '/House_Price_predication/css/detail.css'%}">
+     <link rel="stylesheet" href="{% static '/House_Price_predication/css/slide.css'%}">
+
+<!-- newwww -->
+</head>
+
+<body>
+    <div class="navbar">
+     <a href="#"> <img class="logo" src="{% static '/House_Price_predication/image/home_logo.jpg'%}" alt="logo" srcset=""></a>
+
+           <ul id="item">
+            <li> <a class="active" href="#home">Home </a> </li>
+             <li><a href="{% url 'Price' %}">Price Predication</a></li>
+            <li><a href="#detail">About us</a></li>
+
+            <li><a href="index.php" >Contact</a></li>
+
+
+{{ user.username }}
+               <li><a href="#">Welcome&nbsp&nbsp&nbsp{{ user.username }}&nbsp&nbspand {{ user.date_joined }}</a></li>
+               <li><a href="{% url 'log_out' %}">logout</a></li>
+
+
+
+
+            <div class="icon">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+                <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                 <a href="admin/"><i class="fa fa-user" aria-hidden="true"></i></a>
+
+            </div>
+        </ul>
+    </div>

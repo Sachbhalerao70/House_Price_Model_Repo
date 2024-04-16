@@ -1,0 +1,76 @@
+
+.detail{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding:8rem 15rem;
+    background-color: black;
+
+}
+.detail h3,h5,h6{
+    color: white;
+}
+.one {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+.one h3{
+    font-size: 2rem;
+    padding-bottom: 1.5rem;
+}
+/* .one h6{
+    font-size: 1.2rem;
+    padding-bottom: 1.2rem;
+    font-weight: 400;
+
+} */
+.one p{
+    color: gray;
+    font-size: 1.1rem;
+    padding-bottom: 1.5rem;
+}
+.one a{
+    text-decoration: none;
+    color: tomato;
+    text-decoration: underline;
+
+    text-align: center;
+
+}
+.one a:hover{
+    background-color: white;
+    border-radius: 4px;
+    padding: 1rem 1.2rem;
+    color: black;
+    font-weight: bolder;
+
+}
+.two {
+    width: 45%;
+    border-left: 1px solid white;
+    padding-left: 5rem;
+
+
+}
+.two h3{
+    font-size: 2rem;
+    padding-bottom: 1.5rem;
+}
+.two h5{
+    font-size: 1rem;
+
+     color: white;
+     font-weight: bold;
+    padding-bottom: 1.5rem;
+
+}
+.two p{
+    font-size: 0.8rem;
+  margin-bottom: 0.1rem;
+    color: white;
+}

@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction Form</title>
+
+<!--    {% load static %}-->
+<!--    <link rel="stylesheet" href="{% static '/House_Price_predication/css/Price_Field.css'%}">-->
+    <style>
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Zen+Kurenaido&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=PT+Serif&family=Poppins:wght@200&family=Zen+Kurenaido&display=swap');
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('https://www.pixelstalk.net/wp-content/uploads/2016/10/Black-and-Orange-HD-Background.jpg');
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: orangered;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color:black;
+    color: orangered;
+}
+
+.form-box {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+
+    background-color: #cccccc;
+    box-shadow: 3px 5px black;
+}
+
+.label-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-section, .right-section {
+    width: 48%;
+    display: inline-block;
+}
+
+.left-section {
+    float: left;
+    margin-right: 2%;
+}
+
+.right-section {
+    float: right;
+    margin-left: 2%;
+}
+
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-box">
+            <h2>House Price Prediction Form</h2>
+
+
+
+                <form action="" method="POST" action="{% url 'Price' %}" class="login-email" id="house-price-form">
+                <div class="left-section">
+
+                    <label for="area_type">Area Type:</label>
+                    <select id="area_type" name="area_type" required>
+                        <option value="">Select Area Type</option>
+                        <option value="Super built-up Area">Super built-up Area</option>
+                        <option value="Built-up Area">Built-up Area</option>
+                        <option value="Plot Area">Plot Area</option>
+                    </select>
+
+                    <label for="availability">Availability:</label>
+                    <select id="availability" name="availability" required>
+                        <option value="">Select Availability</option>
+                        <option value="Ready To Move">Ready To Move</option>
+                        <option value="Under Construction">Under Construction</option>
+                    </select>
+
+                    <label for="location">Location:</label>
+                    <input list="locations" id="location" name="location" required>
+                    <datalist id="locations">
+                        <option value="Electronic City Phase II">
+                        <option value="Chikka Tirupathi">
+                        <option value="Uttarahalli">
+                        <option value="Lingadheeranahalli">
+                        <option value="Kothanur">
+                        <option value="Whitefield">
+                        <option value="Old Airport Road">
+                        <option value="Rajaji Nagar">
+                        <option value="Marathahalli">
+                        <option value="Gandhi Bazar">
+                        <option value="7th Phase JP Nagar">
+                        <option value="Gottigere">
+                        <option value="Sarjapur">
+                        <option value="Mysore Road">
+                        <option value="Bisuvanahalli">
+                        <option value="Raja Rajeshwari Nagar">
+                        <option value="Ramakrishnappa Layout">
+                        <option value="Manayata Tech Park">
+                        <option value="Kengeri">
+                        <option value="Binny Pete">
+                        <option value="Thanisandra">
+                    </datalist>
+
+                    <label for="size">Size:</label>
+                    <select id="BHK_size" name="size" required>
+                        <option value="">Select Size</option>
+                        <option value="3 BHK">3 BHK</option>
+                        <option value="2 BHK">2 BHK</option>
+                        <option value="4 BHK">4 BHK</option>
+                        <option value="1 BHK">1 BHK</option>
+                    </select>
+                </div>
+                <div class="right-section">
+                    <label for="society">Society:</label>
+                    <input type="text" id="society" name="society">
+
+                    <label for="total_sqft">Total Square Feet:</label>
+                    <input type="number" id="total_sqft" name="total_sqft" min="1" required>
+
+                    <label for="bath">Number of Bathrooms:</label>
+                    <input type="number" id="bath" name="bath" min="1" required>
+
+                    <label for="balcony">Number of Balconies:</label>
+                    <input type="number" id="balcony" name="balcony" min="0" required>
+                </div>
+                    {% csrf_token %}
+                <input type="submit" name="Predict Price" value="Predict Price">
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - static_volume:/app/staticfiles
+    depends_on:
+      - db
+
+  db:
+
+
+    image: mysql:latest
+    environment:
+        MYSQL_ROOT_PASSWORD: 123
+        MYSQL_DATABASE: house_price_predicaion
+        MYSQL_USER: sachu
+        MYSQL_PASSWORD: sachu
+
+  nginx:
+    build: ./nginx
+    ports:
+      - "80:80"
+    volumes:
+      - static_volume:/app/staticfiles
+    depends_on:
+      - web
+
+volumes:
+  static_volume:
